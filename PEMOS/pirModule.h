@@ -4,10 +4,12 @@ public:
 	void scan();
 	int getPirPin();
 	int getBuzzerPin();
-	int getValue();
+	bool getValue();
+	bool toggleMute();
 	void printValue();
 private:
 	bool invaded = false;
+	bool mute = false;
 	const int pirPin = 12;
 	const int buzzerPin = 11;
 };
@@ -24,8 +26,12 @@ int PIRClass::getBuzzerPin() {
 	return buzzerPin;
 }
 
-int PIRClass::getValue() {
+bool PIRClass::getValue() {
 	return invaded;
+}
+
+bool PIRClass::toggleMute() {
+
 }
 void PIRClass::printValue() {
 	lcd.setCursor(0, 1);

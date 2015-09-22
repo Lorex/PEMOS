@@ -1,7 +1,7 @@
 /*
 ========================================
 |  Prometheus Environment Monitor OS   |
-|             v1.2.150922              |
+|             v1.3.150922              |
 |                                      |
 |  Author: Lorex                       |
 |  Special Thanks:                     |
@@ -24,12 +24,14 @@ void setup()
 	pemosInitialize();
 	createTask("refDHT", 500);
 	createTask("refPIR", 200);
+	createTask("refSerial", 1000);
 }
 
 void loop()
 {
 	runTask((char*)refreshDHT, "refDHT");
 	runTask((char*)refreshPIR, "refPIR");
+	runTask((char*)refreshSerial, "refSerial");
 }
 
 // tasks
@@ -44,7 +46,6 @@ void refreshDHT() {
 
 void refreshPIR() {
 	PIR.scan();
-	Serial.println(PIR.getValue());
 	PIR.printValue();
 	if (PIR.getValue())
 	{
@@ -54,4 +55,7 @@ void refreshPIR() {
 		noTone(PIR.getBuzzerPin());
 	}
 
+}
+void refreshSerial() {
+	SER.uploadStatus();
 }
