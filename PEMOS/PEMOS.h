@@ -4,6 +4,7 @@
 #include "lcdModule.h"
 #include "dhtModule.h"
 #include "pirModule.h"
+#include "serialModuls.h"
 
 void pemosInitialize(){
 	LCD.init();
