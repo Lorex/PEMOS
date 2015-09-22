@@ -8,7 +8,6 @@
 ========================================
 */
 
-//#include "emModule.h"
 #include "Wire\Wire.h"
 #include "LiquidCrystal_I2C\LiquidCrystal_I2C.h"
 #include "DHT\dht11.h"

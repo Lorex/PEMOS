@@ -1,0 +1,10 @@
+{
+  "name": "WebAdmin",
+  "version": "0.0.0",
+  "description": "WebAdmin",
+  "main": "server.js",
+  "author": {
+    "name": "joe50",
+    "email": ""
+  }
+}
