@@ -47,7 +47,7 @@ void refreshDHT() {
 void refreshPIR() {
 	PIR.scan();
 	PIR.printValue();
-	if (PIR.getValue())
+	if (PIR.getValue() && !PIR.getMute())
 	{
 		tone(PIR.getBuzzerPin(), 1000);
 	}

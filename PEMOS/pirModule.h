@@ -4,6 +4,7 @@ public:
 	void scan();
 	int getPirPin();
 	int getBuzzerPin();
+	bool getMute();
 	bool getValue();
 	bool toggleMute();
 	void printValue();
@@ -31,7 +32,12 @@ bool PIRClass::getValue() {
 }
 
 bool PIRClass::toggleMute() {
+	mute = !mute;
+	return mute;
+}
 
+bool PIRClass::getMute() {
+	return mute;
 }
 void PIRClass::printValue() {
 	lcd.setCursor(0, 1);
