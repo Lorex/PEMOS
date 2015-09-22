@@ -24,7 +24,10 @@ var data = {
 };
 
 // configuration
-app.use(morgan(':remote-addr :status :method :url :response-time'));
+app.use(morgan(':remote-addr :status :method :url :response-time', {
+    skip: function (req, res) { return res.statusCode < 400 }
+}));
+
 app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');

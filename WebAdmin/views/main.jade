@@ -7,9 +7,14 @@ mixin content()
             tr
                 th 溫度
                 td= temp + " ℃"
+                    div(style="float: right;"): p ( 警戒值: 30 ℃ )
             tr
                 th 濕度
                 td= humid + " %RH"
+                    div(style="float: right;"): p ( 警戒值: 50 %RH )
+            tr
+                th 煙霧偵測狀態
+                td <模組未啟用>
             tr
                 th 入侵偵測狀態
                 if invaded == 0
@@ -20,8 +25,10 @@ mixin content()
                 th 警鈴狀態
                 if mute == 0
                     td: font(color="green") 開啟
+                        div(style="float: right;"): a.btn.btn-default(href="/toggleMute") 關閉警鈴
                 else
                     td: font(color="red"): b 關閉
+                        div(style="float: right;"): a.btn.btn-default(href="/toggleMute") 開啟警鈴
 
 block title
     title P.E.M.O.S
@@ -87,4 +94,4 @@ block content
                             td 普羅米修斯 機房授權
                         tr
                             th 到期日
-                            td - (剩餘 無限 天)
+                            td - ( 剩餘 無限 天 )
