@@ -9,7 +9,7 @@ var morgan = require('morgan');
 var config = require('./config');
 
 // variables
-const appVersion = "2.0.150922";
+const appVersion = "2.1.150923";
 var sp = new serial(config.pemosComPort, { baudrate: 115200, parser: parser.parsers.readline("\n") });
 var app = express();
 var data = {
@@ -19,7 +19,8 @@ var data = {
     "mute": 0,
     "refresh": 5,
     "apiVersion": 0,
-    "appVersion": appVersion
+    "appVersion": appVersion,
+    "muteToggled": 0
 };
 
 // configuration
@@ -43,8 +44,15 @@ sp.on('data', function (chunk) {
 
 // routing
 app.get('/', function (req, res) {
+    data.muteToggled = 0;
     delete require.cache[require.resolve('./config')];
     data.refresh = require('./config').refreshInterval;
+    res.render('main', data);
+});
+
+app.get('/toggleMute', function (req, res) {
+    data.muteToggled = 1;
+    sp.write('1');
     res.render('main', data);
 });
 
