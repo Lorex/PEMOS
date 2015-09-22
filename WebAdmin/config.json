@@ -1,0 +1,6 @@
+﻿{
+  "listenOnIP": "localhost",
+  "listenOnPort": "8888",
+  "pemosComPort": "COM6",
+  "refreshInterval": 3
+}

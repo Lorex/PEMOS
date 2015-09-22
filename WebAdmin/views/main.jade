@@ -1,0 +1,80 @@
+﻿extends ./bootstrap
+
+mixin content()
+    div.panel.panel-heading 台南鹽水機房
+    div.panel.body
+        table.table
+            tr
+                th 溫度
+                td= temp + " ℃"
+            tr
+                th 濕度
+                td= humid + " %RH"
+            tr
+                th 入侵偵測狀態
+                - if( invaded == 0 )
+                    td: font(color="green") 沒有偵測到入侵者
+                - else
+                    td: font(color="red"): b 偵測到入侵者！
+            tr
+                th 警鈴狀態
+                - if( mute == 0 )
+                    td: font(color="green") 開啟
+                - else
+                    td: font(color="red"): b 關閉
+
+block title
+    title P.E.M.O.S
+    meta(http-equiv="refresh", content= refresh, url="/")
+
+block content
+    div.jumbotron
+        div.container
+            h1 P.E.M.O.S
+            h2 普羅米修斯機房監控整合解決方案
+            span Powered by Lorex L. Yang &lt;joe50613@gmail.com&gt;
+    div.container
+        div.col-lg-5
+            div.row
+                h2 概觀
+            div.row
+                if( invaded == 0 )
+                    div.panel.panel-primary
+                        +content
+                else
+                    div.panel.panel-danger
+                        +content
+
+                    
+        div.col-lg-5.col-lg-offset-2
+            div.row
+                h2 系統資訊
+            div.row
+                div.panel.panel-info
+                    div.panel.panel-heading P.E.M.O.S
+                    table.table
+                        tr
+                            th 頁面更新間隔
+                            td= "每 " + refresh + " 秒"
+                        tr
+                            th 版本
+                            td= appVersion
+                        tr
+                            th API 版本
+                            td= apiVersion
+                        tr
+                            th 授權
+                            td 普羅米修斯 機房授權
+                        tr
+                            th 授權剩餘時長
+                            td 無限
+                        tr
+                            th 作者資訊
+                            td Lorex L. Yang &lt;<a href="mailto:joe50613@gmail.com"> joe50613@gmail.com </a>&gt;
+                        tr
+                            th 特別感謝
+                            td
+                                ul
+                                    li 感謝 <a href="https://www.facebook.com/su.w.quan" target="_blank"> chiou_mark </a>協助測試系統
+                                    li 感謝 <a href="https://www.facebook.com/MaHauo" target="_blank"> ADR </a>提供程式設計上的技術指導
+                                    li 感謝 <a href="https://www.facebook.com/weber.cutsai" target="_blank"> Tasi </a> 提供程式設計上的技術指導

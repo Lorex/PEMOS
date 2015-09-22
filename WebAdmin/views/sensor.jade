@@ -1,0 +1,23 @@
+extends ./bootstrap
+
+block title
+	title Environment Monitor
+	meta(http-equiv="refresh", content= refresh, url="/")
+
+block content
+	div.jumbotron
+		div.container
+			h1 Environment Monitor
+			p Powered by Lorex L. Yang &lt;joe50613@gmail.com&gt;
+	div.container
+		table.table.table-hover.table-condensed
+			tbody
+				tr
+					th Temperature
+					td= temp
+				tr
+					th Humidity
+					td= humid
+
+		a.btn.btn-info(href="/") Refresh
+		h5= "Current Refresh Interval: " + refresh + " seconds."

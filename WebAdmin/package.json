@@ -6,5 +6,11 @@
   "author": {
     "name": "joe50",
     "email": ""
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "morgan": "^1.6.1",
+    "serialport": "^1.7.4"
   }
 }
