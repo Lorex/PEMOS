@@ -13,7 +13,7 @@ long taskLastExecuteTimeList[MAX_TASK];
 unsigned long currentTime = 0;
 
 // Get Task ID by Name
-int getTaskIDbyName(char * name) {
+int getTaskIDbyName(String name) {
 	for (int i = 0; i < allocatedTaskID; i++) {
 		if (taskNameList[i] == name)
 			return i;
@@ -22,7 +22,7 @@ int getTaskIDbyName(char * name) {
 }
 
 // Create task and add into task list
-void createTask(char * taskName, long taskInterval) {
+void createTask(String taskName, long taskInterval) {
 	taskNameList[allocatedTaskID] = taskName;
 	taskIntervalList[allocatedTaskID] = taskInterval;
 	taskLastExecuteTimeList[allocatedTaskID] = 0;
@@ -30,10 +30,12 @@ void createTask(char * taskName, long taskInterval) {
 }
 
 // Monitor and run task
-void runTask(char * taskName) {
+void runTask(char * funcName, String taskName) {
 	currentTime = millis();
 	if (currentTime - taskLastExecuteTimeList[getTaskIDbyName(taskName)] >= taskIntervalList[getTaskIDbyName(taskName)]) {
+		//Serial.println(taskLastExecuteTimeList[getTaskIDbyName(taskName)]);
+		//Serial.println(getTaskIDbyName(taskName));
 		taskLastExecuteTimeList[getTaskIDbyName(taskName)] = currentTime;
-		((void(*)())taskName)();
+		((void(*)())funcName)();
 	}
 }

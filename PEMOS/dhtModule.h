@@ -4,8 +4,10 @@ dht11 dht;
 
 class DHTClass {
 public:
-	void getValue();
+	void reloadValue();
 	void printValue();
+	int getTemp();
+	int getHumid();
 	bool isAvailable();
 private:
 	int temp;
@@ -13,7 +15,7 @@ private:
 	const int pin = 13;
 };
 
-void DHTClass::getValue() {
+void DHTClass::reloadValue() {
 	temp = dht.temperature;
 	humid = dht.humidity;
 }
@@ -28,5 +30,12 @@ bool DHTClass::isAvailable() {
 	return(dht.read(pin) == DHTLIB_OK) ? true : false;
 }
 
+int DHTClass::getTemp() {
+	return temp;
+}
+
+int DHTClass::getHumid() {
+	return humid;
+}
 
 DHTClass DHT;

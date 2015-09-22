@@ -7,7 +7,7 @@ public:
 	int getValue();
 	void printValue();
 private:
-	bool invaded;
+	bool invaded = false;
 	const int pirPin = 12;
 	const int buzzerPin = 11;
 };
@@ -27,8 +27,6 @@ int PIRClass::getBuzzerPin() {
 int PIRClass::getValue() {
 	return invaded;
 }
-
-
 void PIRClass::printValue() {
 	lcd.setCursor(0, 1);
 	lcd.print((invaded) ? "INVADED." : "Safe.");
