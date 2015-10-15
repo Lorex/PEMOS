@@ -36,9 +36,6 @@
     <None Include="PEMOS.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Visual Micro\.PEMOS.vsarduino.h">
-      <Filter>標頭檔</Filter>
-    </ClInclude>
     <ClInclude Include="PEMOS.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
@@ -125,6 +122,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire\utility\twi.h">
       <Filter>_libraries\Wire\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="__vm\.PEMOS.vsarduino.h">
+      <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

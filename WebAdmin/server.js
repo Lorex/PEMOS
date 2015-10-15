@@ -9,7 +9,7 @@ var morgan = require('morgan');
 var config = require('./config');
 
 // variables
-const appVersion = "2.1.150923";
+const appVersion = "2.2.151015";
 var sp = new serial(config.pemosComPort, { baudrate: 115200, parser: parser.parsers.readline("\n") });
 var app = express();
 var data = {
@@ -20,7 +20,9 @@ var data = {
     "refresh": 5,
     "apiVersion": 0,
     "appVersion": appVersion,
-    "muteToggled": 0
+    "muteToggled": 0,
+    "triggerTemp": 0,
+    "triggerHumid": 0
 };
 
 // configuration
@@ -50,6 +52,9 @@ app.get('/', function (req, res) {
     data.muteToggled = 0;
     delete require.cache[require.resolve('./config')];
     data.refresh = require('./config').refreshInterval;
+    data.triggerTemp = require('./config').triggerTemp;
+    data.triggerHumid = require('./config').triggerHumid;
+    sp.write((data.temp >= data.triggerTemp || data.humid >= data.triggerHumid)? '2':'3');
     res.render('main', data);
 });
 

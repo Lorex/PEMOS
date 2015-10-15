@@ -7,11 +7,11 @@ mixin content()
             tr
                 th 溫度
                 td= temp + " ℃"
-                    div(style="float: right;"): p ( 警戒值: 30 ℃ )
+                    div(style="float: right;"): p= "( 警戒值: " + triggerTemp  + "℃ )"
             tr
                 th 濕度
                 td= humid + " %RH"
-                    div(style="float: right;"): p ( 警戒值: 50 %RH )
+                    div(style="float: right;"): p= "( 警戒值: " + triggerHumid  + "%RH )"
             tr
                 th 煙霧偵測狀態
                 td <模組未啟用>

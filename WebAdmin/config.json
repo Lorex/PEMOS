@@ -2,5 +2,7 @@
   "listenOnIP": "localhost",
   "listenOnPort": "8888",
   "pemosComPort": "COM6",
-  "refreshInterval": 3
+  "refreshInterval": 3,
+  "triggerTemp": 30,
+  "triggerHumid": 70
 }

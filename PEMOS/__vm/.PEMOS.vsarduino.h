@@ -13,10 +13,11 @@
 #define __AVR_ATmega2560__
 #define _VMDEBUG 1
 #define F_CPU 16000000L
-#define ARDUINO 164
+#define ARDUINO 165
 #define ARDUINO_AVR_MEGA2560
 #define ARDUINO_ARCH_AVR
 #define __cplusplus
+#define __AVR__
 #define __inline__
 #define __asm__(x)
 #define __extension__

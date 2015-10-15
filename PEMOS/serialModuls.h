@@ -24,6 +24,10 @@ void serialClass::commandHandler() {
 		case '1':
 			PIR.toggleMute();
 			break;
+		case '2':
+			tone(PIR.getBuzzerPin(), 1000);
+		case '3':
+			noTone(PIR.getBuzzerPin());
 		default:
 			break;
 		}
