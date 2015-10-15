@@ -6,12 +6,20 @@ mixin content()
         table.table
             tr
                 th 溫度
-                td= temp + " ℃"
-                    div(style="float: right;"): p= "( 警戒值: " + triggerTemp  + "℃ )"
+                if temp < triggerTemp
+                    td= temp + " ℃"
+                        div(style="float: right;"): p= "( 警戒值: " + triggerTemp  + "℃ )"
+                else
+                    td: font(color="red")= temp + " ℃"
+                        div(style="float: right;"): p= "( 警戒值: " + triggerTemp  + "℃ )"
             tr
                 th 濕度
-                td= humid + " %RH"
-                    div(style="float: right;"): p= "( 警戒值: " + triggerHumid  + "%RH )"
+                if humid < triggerHumid
+                    td= humid + " %RH"
+                        div(style="float: right;"): p= "( 警戒值: " + triggerHumid  + "%RH )"
+                else
+                    td: font(color="red")= humid + " %RH"
+                        div(style="float: right;"): p= "( 警戒值: " + triggerHumid  + "%RH )"
             tr
                 th 煙霧偵測狀態
                 td <模組未啟用>
@@ -45,12 +53,27 @@ block content
             div.container
                 div.alert.alert-success
                     p <b>成功！</b>您已經成功調整警鈴狀態。
+    if temp >= triggerTemp
+        div.row
+            div.container
+                div.alert.alert-danger
+                    p <b>警告</b>！目前機房溫度過高！
+    if humid >= triggerHumid
+        div.row
+            div.container
+                div.alert.alert-danger
+                    p <b>警告</b>！目前機房濕度過高！
+    if invaded == 1
+        div.row
+            div.container
+                div.alert.alert-danger
+                    p <b>警告</b>！偵測到入侵物！
     div.container
         div.col-lg-5
             div.row
                 h2 概觀
             div.row
-                if( invaded == 0 )
+                if ((invaded == 0) && (temp < triggerTemp) && (humid < triggerHumid))
                     div.panel.panel-primary
                         +content
                 else
