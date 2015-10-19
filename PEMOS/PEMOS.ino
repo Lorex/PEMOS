@@ -1,7 +1,7 @@
 /*
 ========================================
 |  Prometheus Environment Monitor OS   |
-|             v1.5.150923              |
+|             v3.0.151020              |
 |                                      |
 |  Author: Lorex                       |
 |  Special Thanks:                     |
@@ -25,7 +25,9 @@ void setup()
 	createTask("refDHT", 500);
 	createTask("refPIR", 200);
 	createTask("refSerial", 1000);
+	createTask("refGas", 1000);
 	createTask("scanSerial", 1);
+	createTask("refFire", 1000);
 }
 
 void loop()
@@ -34,6 +36,8 @@ void loop()
 	runTask((char*)refreshPIR, "refPIR");
 	runTask((char*)refreshSerial, "refSerial");
 	runTask((char*)scanSerial, "scanSerial");
+	runTask((char*)refreshGas, "refGas");
+	runTask((char*)refreshFire, "refFire");
 }
 
 // tasks
@@ -64,4 +68,12 @@ void refreshSerial() {
 
 void scanSerial() {
 	SER.commandHandler();
+}
+
+void refreshGas() {
+	GAS.scan();
+}
+
+void refreshFire() {
+	FIRE.scan();
 }

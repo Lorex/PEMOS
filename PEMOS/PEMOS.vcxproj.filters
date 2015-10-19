@@ -126,6 +126,15 @@
     <ClInclude Include="__vm\.PEMOS.vsarduino.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="fireModule.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="gasModule.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="Visual Micro\.PEMOS.vsarduino.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\..\..\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino\abi.cpp">

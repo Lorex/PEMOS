@@ -74,10 +74,10 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>d:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;d:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;C:\Users\joe50\Source\Repos\PEMOS\PEMOS;d:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire;d:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire\utility;d:\Program Files (x86)\Arduino\libraries;d:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;D:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\ytzr400h.myg\Micro Platforms\default\debuggers;D:\Users\joe50\Documents\Arduino\libraries;d:\Program Files (x86)\Arduino\hardware\tools\avr/avr/include/;d:\Program Files (x86)\Arduino\hardware\tools\avr//avr/include/avr/;d:\Program Files (x86)\Arduino\hardware\tools\avr/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ForcedIncludeFiles>C:\Users\joe50\Source\Repos\PEMOS\PEMOS\__vm\.PEMOS.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalIncludeDirectories>D:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;D:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;D:\Users\joe50\Documents\Arduino\PEMOS\PEMOS\PEMOS;D:\Program Files (x86)\Arduino\libraries\DHT;D:\Program Files (x86)\Arduino\libraries\DHT\utility;D:\Program Files (x86)\Arduino\libraries\LiquidCrystal_I2C;D:\Program Files (x86)\Arduino\libraries\LiquidCrystal_I2C\utility;D:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire;D:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire\utility;D:\Program Files (x86)\Arduino\libraries;D:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;D:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\gyrzos2l.x43\Micro Platforms\default\debuggers;D:\Users\joe50\Documents\Arduino\libraries;D:\Program Files (x86)\Arduino\hardware\arduino\avr\cores\arduino;D:\Program Files (x86)\Arduino\hardware\arduino\avr\variants\mega;D:\Program Files (x86)\Arduino\libraries\DHT;D:\Program Files (x86)\Arduino\libraries\LiquidCrystal_I2C;D:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\gyrzos2l.x43\Micro Platforms\default\debuggers\VM_DBG;D:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire;D:\Program Files (x86)\Arduino\libraries;D:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries;D:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\gyrzos2l.x43\Micro Platforms\default\debuggers;D:\Users\joe50\Documents\Arduino\libraries;D:\Program Files (x86)\Arduino\hardware\arduino\avr\libraries\Wire\utility;D:\Program Files (x86)\Arduino\hardware\tools\avr/avr/include/;D:\Program Files (x86)\Arduino\hardware\tools\avr//avr/include/avr/;D:\Program Files (x86)\Arduino\hardware\tools\avr/lib\gcc\avr\4.8.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>D:\Users\joe50\Documents\Arduino\PEMOS\PEMOS\PEMOS\Visual Micro\.PEMOS.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
-      <PreprocessorDefinitions>__AVR_ATmega2560__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=165;ARDUINO_AVR_MEGA2560;ARDUINO_ARCH_AVR;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>__AVR_ATmega2560__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=164;ARDUINO_AVR_MEGA2560;ARDUINO_ARCH_AVR;__cplusplus;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -151,11 +151,14 @@
     <ClInclude Include="..\..\..\..\..\..\..\Program Files (x86)\Arduino\libraries\DHT\dht11.h" />
     <ClInclude Include="..\..\..\..\..\..\..\Program Files (x86)\Arduino\libraries\LiquidCrystal_I2C\LiquidCrystal_I2C.h" />
     <ClInclude Include="dhtModule.h" />
+    <ClInclude Include="fireModule.h" />
+    <ClInclude Include="gasModule.h" />
     <ClInclude Include="pirModule.h" />
     <ClInclude Include="lcdModule.h" />
     <ClInclude Include="PEMOS.h" />
     <ClInclude Include="serialModuls.h" />
     <ClInclude Include="task.h" />
+    <ClInclude Include="Visual Micro\.PEMOS.vsarduino.h" />
     <ClInclude Include="__vm\.PEMOS.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>

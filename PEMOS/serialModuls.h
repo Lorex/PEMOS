@@ -5,7 +5,7 @@ public:
 	void uploadStatus();
 	void commandHandler();
 private:
-	const String APIVersion = "2";
+	const String APIVersion = "3";
 };
 
 void serialClass::uploadStatus(){
@@ -13,8 +13,10 @@ void serialClass::uploadStatus(){
 	int humid = DHT.getHumid();
 	int invaded = PIR.getValue();
 	int mute = PIR.getMute();
+	int gas = GAS.getValue();
+	int fire = FIRE.getValue();
 	
-	Serial.println("T" + (String)temp + "H" + (String)humid + "I" + (String)invaded + "M" + (String)mute + "A" + APIVersion + "E");
+	Serial.println("T" + (String)temp + "H" + (String)humid + "I" + (String)invaded + "M" + (String)mute + "G" + (String)gas + "F" + (String)fire + "A" + APIVersion + "E");
 }
 
 void serialClass::commandHandler() {
